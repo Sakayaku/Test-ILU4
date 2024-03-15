@@ -1,0 +1,8 @@
+a,a
+da,ad
+anagramme,aaaegmmnr
+Ed,dE
+321654,123456
+ana!gram$me,!$aaaegmmnr
+être,ertê
+facile,acefil

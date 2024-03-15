@@ -1,56 +1,41 @@
 package test;
-import main_code.tri_insertion;
-import java.io.ByteArrayInputStream;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.List;
+
 public class test {
 	
-	public static void test1() {
-		String donnee = "facile";
-		String oracle = "acefil";
-		
-		ByteArrayInputStream input = new ByteArrayInputStream(donnee.getBytes());
-		System.setIn(input);
-		
-		tri_insertion tri_insertion = new tri_insertion();
-		if(tri_insertion.anagramme().equals(oracle))
-			System.out.println("Test avec la valeur '" + donnee + "' réussi");
-		else
-			System.out.println("Test avec la valeur  '" + donnee + "' échoué");
-		
+	public static void test1() {		
+		try {
+		    File file = new File(".\\src\\test\\fichier_test.txt");
+			FileReader fileReader = new FileReader(file.getPath());
+			BufferedReader reader = new BufferedReader(fileReader);
+			String line = reader.readLine();
+			
+			while (line != null) {
+				List<String> items = Arrays.asList(line.split(","));
+				System.out.print("Test avec " + items.get(0));
+				if(main_code.tri_insertion.anagramme(items.get(0)).equals(items.get(1))) {
+					System.out.println(" : Pass");
+				}
+				else {
+					System.out.println(" : Fail");
+				}
+				
+				line = reader.readLine();
+			}
+			reader.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
-	
-	public static void test2() {
-		String donnee = "a";
-		String oracle = "a";
-		
-		ByteArrayInputStream input = new ByteArrayInputStream(donnee.getBytes());
-		System.setIn(input);
-		
-		tri_insertion tri_insertion = new tri_insertion();
-		if(tri_insertion.anagramme().equals(oracle))
-			System.out.println("Test avec la valeur '" + donnee + "' réussi");
-		else
-			System.out.println("Test avec la valeur '" + donnee + "' échoué");
-		
-	}
-	
-	public static void test3() {
-		String donnee = " ";
-		String oracle = " ";
-		
-		ByteArrayInputStream input = new ByteArrayInputStream(donnee.getBytes());
-		System.setIn(input);
-		
-		tri_insertion tri_insertion = new tri_insertion();
-		if(tri_insertion.anagramme().equals(oracle))
-			System.out.println("Test avec la valeur '" + donnee + "' réussi");
-		else
-			System.out.println("Test avec la valeur '" + donnee + "' échoué");
-		
-	}
-	
-	public static void main(String[] args) {
+
+	public static void main(String[] args){
 		test1();
-		test2();
-		test3();
+
 	}
 }
