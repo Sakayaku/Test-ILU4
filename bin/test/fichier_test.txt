@@ -1,15 +1,19 @@
 a,a
+cc,cc
 da,ad
 anagramme,aaaegmmnr
+anag ramme, aaaegmmnr
 Ed,dE
 321654,123456
-tortue, tortue
+tortue,tortue
 ana!gram$me,!$aaaegmmnr
 être,ertê
 facile,acefil
+Illégalité,agIillltéé
 mouton,mnootu
 ingénierie, ingénierie
 des, v
+v, des
 logiciels, logicielsfrte
 et, jui
 utilisabilité, zebra  
@@ -17,3 +21,4 @@ testavecespace,
  , 
 ,
  ,
+   ,  

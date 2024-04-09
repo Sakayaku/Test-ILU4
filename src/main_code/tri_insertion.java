@@ -1,6 +1,5 @@
 package main_code;
 
-
 public class tri_insertion {
 
 	public static String anagramme(String mot) {

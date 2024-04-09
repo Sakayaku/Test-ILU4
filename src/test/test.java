@@ -17,7 +17,6 @@ public class test {
 			String line = reader.readLine();
 			
 			while (line != "") {
-				//System.out.println(line);
 				List<String> items = Arrays.asList(line.split(","));
 				System.out.print("Test avec '" + items.get(0)+"' : ");
 				if(main_code.tri_insertion_mutants.anagramme(items.get(0)).equals(items.get(1))) {
