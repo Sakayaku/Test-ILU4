@@ -16,23 +16,29 @@ public class test {
 			BufferedReader reader = new BufferedReader(fileReader);
 			String line = reader.readLine();
 			
-			while (line != "") {
-				List<String> items = Arrays.asList(line.split(","));
-				System.out.print("Test avec '" + items.get(0)+"' : ");
-				if(main_code.tri_insertion_mutants.anagramme(items.get(0)).equals(items.get(1))) {
-					System.out.println("Pass");
+			while (line != null) {
+				try {
+					List<String> items = Arrays.asList(line.split(","));
+					System.out.print("Test avec '" + items.get(0)+"' : ");
+					if(main_code.tri_insertion.anagramme(items.get(0)).equals(items.get(1))) {
+						System.out.println("Pass");
+					}
+					else {
+						System.out.println("Fail");
+					}
 				}
-				else {
-					System.out.println("Fail");
+				catch (ArrayIndexOutOfBoundsException e) {
+					if (!line.contains(",")) {
+						System.err.println("Erreur: la chaine doit contenir une virgule!");	
+					}else {
+						System.err.println("Erreur: les chaînes avant et après la virgule ne doivent pas être vides!");
+					}
 				}
-				
 				line = reader.readLine();
 			}
 			reader.close();
 		} catch (IOException e) {
 			e.printStackTrace();
-		} catch (ArrayIndexOutOfBoundsException e) {
-			System.err.println("Erreur: les chaînes avant et après la virgule ne doivent pas être vides!");
 		}
 	}
 

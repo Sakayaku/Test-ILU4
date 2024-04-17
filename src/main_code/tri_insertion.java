@@ -1,12 +1,14 @@
 package main_code;
 
+import java.util.Scanner;
+
 public class tri_insertion {
 
 	public static String anagramme(String mot) {
 		String[] anagramme;
 		String saisie = mot;
 		anagramme = saisie.split("");
-		
+
 		int taille_anagramme = anagramme.length;
 
 		for (int i = 0; i < taille_anagramme; i++) {
@@ -18,11 +20,17 @@ public class tri_insertion {
 			}
 			anagramme[j] = car;
 		}
-		
 		String anagramme_cree = "";
 		for (String car : anagramme) {
 			anagramme_cree += car;
 		}
 		return anagramme_cree;
+	}
+	public static void main(String[] args){
+		System.out.println("Entrez le mot dont vous cherchez l'anagramme:");
+		Scanner scanner=new Scanner(System.in);
+		String annagramme=scanner.nextLine();
+		System.out.println("L'anagramme de votre mot est :");
+		System.out.println(anagramme(annagramme));
 	}
 }
