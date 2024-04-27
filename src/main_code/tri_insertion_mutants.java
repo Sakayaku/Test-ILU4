@@ -12,8 +12,8 @@ public class tri_insertion_mutants {
 		for (int i = 0; i < taille_anagramme; i++) {
 			String car = anagramme[i];
 			int j = i;
-			while ((j > 0) && (car.compareTo(anagramme[j-1].toLowerCase()) < 0)){ //tests de mutation ici
-				anagramme[j] = anagramme[j-1]; //test de mutation ici
+			while ((j > 0) && (car.compareTo(anagramme[j-1].toLowerCase()) < 0)){ //Tests de mutation ici
+				anagramme[j] = anagramme[j-1]; //Test de mutation ici
 				j = j-1; 
 			}
 			anagramme[j] = car; //Test de mutation ici
